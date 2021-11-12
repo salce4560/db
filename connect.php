@@ -2,7 +2,10 @@
 $dsn="mysql:host=localhost;charset=utf8;dbname=students";
 $pdo=new PDO($dsn,'root','');
 
-$sql="select * from `students` where `id`<30";
+
+$range=(isset($_GET['id']))?$_GET['id']:20;
+
+$sql="select * from `students` where `id`< $range";
 $rows=$pdo->query($sql)->fetchAll();
 
 //echo $rows
@@ -36,6 +39,7 @@ $rows=$pdo->query($sql)->fetchAll();
         <td>學號</td>
         <td>座號</td>
         <td>姓名</td>
+        <td>性別</td>
         <td>出生年月日</td>
         <td>畢業國中</td>
     </tr>
@@ -47,6 +51,12 @@ foreach($rows as $row){
     echo "<td>" . $row['uni_id']    . "</td>";
     echo "<td>" . $row['seat_num']  . "</td>";
     echo "<td>" . $row['name']      . "</td>";
+    if(mb_substr($row['national_id'],1,1)==1){
+        echo "<td>男生</td>";
+    }else{
+        echo "<td>女生</td>";
+
+    }
     echo "<td>" . $row['birthday']  . "</td>";
     echo "<td>" . $row['secondary'] . "</td>";
     echo "</tr>";
