@@ -11,19 +11,13 @@
 
 <body>
 <?php include "header.html"; ?>
-    <nav>
-        <a href="file01.php">file01.php</a>
-        <a href="file02.php">file02.php</a>
-        <a href="file03.php">file03.php</a>
+<?php include "nav.php"; ?>
 
-    </nav>
     <div class="body">
         file01的內容
 
     </div>
-    <footer>
-        110 php資料庫網頁設計班
-    </footer>
+    <?php include "footer.php";?>
 </body>
 
 </html>
