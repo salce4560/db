@@ -13,7 +13,27 @@
  
  <?php include "./include/side_bar.php";?>
 <div class="content">
-login
+<form action="./api/check_login.php" method="post">
+<table>
+    <tr>
+        <td clospan='2'>會員登入</td>
+     
+    </tr>
+    <tr>
+        <td>帳號</td>
+        <td><input type="text" name="" id=""></td>
+    </tr>
+    <tr>
+        <td>密碼</td>
+        <td><input type="text" name="" id=""></td>
+    </tr>
+    <tr>
+        <td colspan="2"></td>
+        <td><input type="submit" value="登入" name="" id=""></td>
+        <td><input type="reset" value="重製" name="" id=""></td>
+    </tr>
+</table>
+</form>
 
 </div>
  <?php include "./include/footer.php";?>
